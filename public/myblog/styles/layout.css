@@ -1,0 +1,115 @@
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+	color: #333;
+	text-align: left;
+}
+h1{
+	font-size: 24px;
+}
+p{
+	margin:20px 0;
+}
+.main-container{
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.main{
+	width: 60%;
+	margin: 50px auto;
+}
+.logo{
+	float: left;
+	width: 20%;
+	height: 50px;
+	background: #F1F1F2;
+}
+nav{
+	float: left;
+	width: 80%;
+	padding-left:40%;
+	height: 50px;
+	background: #F1F1F2;
+	color:#1093D9;
+}
+nav ul{
+	margin:0;
+	padding:0;
+	padding-top: 15px;
+}
+nav li{
+	margin:0;
+	padding:10px 20px;
+	list-style: none;
+	display: inline;
+}
+nav li a{
+	color:#1093D9;
+	text-decoration: none;
+}
+nav li a:hover{
+	text-decoration: underline;
+}
+.banner{
+	width: 100%;
+	height: 400px;
+	overflow: hidden;
+}
+.main-body{
+	margin:40px 0;
+	padding:0;
+}
+.inner-body{
+	margin:40px 0;
+}
+.text-left{
+	float: left;
+	width: 45%;
+	margin:0 15px 30px 0;
+	padding: 10px;
+}
+.text-right{
+	float: left;
+	width: 45%;
+	margin:0 0 30px 15px;
+	padding: 10px;
+}
+.colorize{
+	background:#f4f4f4;
+}
+.sendForm{
+	width: 100%;
+
+}
+.sendForm input[type=text],.sendForm textarea {
+	width:94%;
+}
+.sendForm input[type=text]{
+
+	padding:10px 20px;
+	margin: 0 0 10px 0;
+	border:1px solid #E3E3E3;
+	 
+	}
+.sendForm textarea{
+	padding:10px 20px;
+	border:1px solid #E3E3E3;
+}
+.sendForm button{
+	width:94%;
+	padding:10px 20px;
+	margin: 10px 0;
+	color:#FFF;
+	border:none;
+	background: #1093D9;
+}
+footer{
+	width: 100%;
+	margin: 20px 0 0 0;
+	padding:20px;
+	box-sizing: border-box;
+	text-align: center;
+	background:#D1D6D8;
+}

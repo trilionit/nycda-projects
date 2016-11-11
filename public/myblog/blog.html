@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Welcome to my Blog</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="styles/layout.css" type="text/css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="retrieve-data-with-jquery.js"></script>
+		</head>
+<body>
+<div class="main-container">
+<header>
+<div class="logo">
+	&nbsp;
+</div>
+	<nav>
+	<ul>
+		<li><a href="/">Home</a></li>
+		<li><a href="/category/blog">Blog Posts</a></li>
+		<li><a href="/category/contact/">Contact</a></li>
+	</ul>
+	</nav>
+</header>
+<div class="banner">
+	<img src="images/bg.jpg" width="100%" alt="background" id="bg">
+</div>
+
+<div class="container-fluid main-body">
+	<div class="col-md-6">
+		
+			<div class="text-left colorize">
+				
+				<img src="images/place-holder.jpg" width="100%">
+				<h4>New Blog Post Appears Here</h4>
+				<p>bla bla bla appears here. Maybe some lorem ipsum too
+				lorem ipsum too lorem ipsum too</p>
+				<a href="/category/blog/post-title">Read More</a>
+				
+
+			</div>
+
+			<div class="text-right colorize">
+				
+				<img src="images/place-holder.jpg" width="100%">
+				<h4>New Blog Post Appears Here</h4>
+				<p>bla bla bla appears here. Maybe some lorem ipsum too
+				lorem ipsum too lorem ipsum too</p>
+				<a href="/category/blog/post-title">Read More</a>
+				
+
+			</div>
+			
+		
+	</div>
+
+
+	<div class="col-md-6">
+		<h1>LIVE BLOG</h1>
+		<p>
+		 Please type something in the form below to post in our awesome blog
+		</p>
+		<form class="sendForm" method="POST" action="/send">
+			<input type="text" name="title" placeholder="Your Title" >
+			<textarea name="message" placeholder="Please enter your text here"></textarea>
+			<button name="send" id="submit">Send Data</button>
+		</form>
+	</div>
+	
+</div>
+
+</div>
+<footer>
+	&copy 2016. My Blog Post. All Rights Reserved
+</footer>
+</body>
+</html>
