@@ -17,19 +17,14 @@
     
     <div class="col-md-6 inner-body">
        
-          <div class="text-left colorize">
-            <img src="../myblog/images/place-holder.jpg" width="100%">
-            <h4>Placeholder Title</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-            <a href="#">Read More</a>
-          </div>
-
+          <% for(var i = 0; i < blog.length; i++){ %>
           <div class="text-right colorize">
             <img src="../myblog/images/place-holder.jpg" width="100%">
-            <h4><%=blog.title %></h4>
-            <p><%=blog.msg %></p>
+            <h4><%=blog[i].title %></h4>
+            <p><%=blog[i].msg %></p>
             <a href="#">Read More</a>
           </div>
+          <% } %>
 
     </div>
 
