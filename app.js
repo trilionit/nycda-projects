@@ -48,7 +48,7 @@ app.get('/posts', function (req, res){
 });
 
   });
-
+//receive route and send user to requested page
 app.get('/category/:posts', function (req, res){
   var page = req.params.posts;
   if(page == 'blog'){
