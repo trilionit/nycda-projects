@@ -27,7 +27,7 @@ app.use(
   bodyParser.urlencoded({extended:true })
 );
 
-app.get('/blog', function (req, res){
+app.get('/', function (req, res){
 res.render('index');
 
 });
