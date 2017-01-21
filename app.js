@@ -1,79 +1,91 @@
-var express =require("express");
-var app = express();
-var port = 3000;
-var bodyParser = require("body-parser");
-var Sequelize = require("Sequelize");
+"use strict"
+let express =require("express");
+let app = express();
+let port = 3030;
 
-app.set("view engine", "ejs");
-app.use(express.static("public"));
+let userInput = require('./userInput');
 
-var sequelize = new Sequelize('myblog', 'root', null, {
+let bodyParser = require('body-parser');
+app.use(express.static('public'));
+
+let Sequelize = require('sequelize');
+let sequelize = new Sequelize('blog', 'postgres', '123456', {
   host: 'localhost',
-  dialect: 'sqlite',
-  storage: './myblog.db'
+  port:'5432',
+  dialect:'postgres'
 });
 
-var postBlog = sequelize.define('blogs', {
-  id:{type: Sequelize.INTEGER, allowNull: false, autoIncrement: true, primaryKey: true},
-  title:Sequelize.STRING,
-  msg:Sequelize.TEXT,
-  createDate:Sequelize.DATE
-});
+
+let Users = require("./models/Users");
+let Blog = require("./models/Blog");
+let Comments = require("./models/Comments");
+
+Blog.belongsTo(Users);
+Comments.belongsTo(Users);
+Comments.belongsTo(Blog);
 
 sequelize.sync();
 
-
 app.use(
-  bodyParser.urlencoded({extended:true })
+	bodyParser.urlencoded({extended:true })
 );
 
 app.get('/', function (req, res){
-res.render('index');
 
-});
-app.get('/posts', function (req, res){
-  sequelize.sync().then(function(){
-  postBlog.findAll({
-    attributes:['title', 'msg'],
-    // where:{
-    //   id:1
-    // }
-    }).then(function(messages){
-      for(var i = 0; i < messages.length; i++){ 
-        var postToBlog=[];
-        postToBlog.push(messages[i].dataValues);
-      }
-      res.render('blog', {blog:postToBlog});
-    }); 
+	Blog.findAll().then(function (data){
+
+		 let response={
+				title:data[0].title,
+				story:data[0].story
+			}
+			console.log("Response from /" + response.title);
+		
+		res.json(response);
+		
+	});
+
+})
+
+app.post('/', function (req, res){
+let reqTitle=req.body.title;
+let story = req.body.story;
+let responseData;
+
+	Blog.count({
+		where: {title: reqTitle},
+		order:['id', 'DESC']
+	}).then(function (count){
+		if(count ==0){
+			Blog.create({
+				title:reqTitle,
+				story:story,
+				userId:1
+			}).then(function (data){
+				console.log("returned data: " + data.dataValues.title);
+			 responseData={
+				title:data.dataValues.title,
+				story:data.dataValues.story
+			 }
+			 res.json(responseData);
+			})
+		}
+		else{
+				responseData={
+				title:reqTitle,
+				story:story
+			}
+			res.send(responseData);
+
+		}
+		
+	});
+
+	
 });
 
-  });
-//receive route and send user to requested page
-app.get('/category/:posts', function (req, res){
-  var page = req.params.posts;
-  if(page == 'blog'){
-    res.redirect('/posts');
-  }
-  else{
-  res.render(page);
-    }
-});
 
-app.post('/send', function(req, res){
-  if (!req.body) return res.sendStatus(400);
-  //form submission from blog form
-  sequelize.sync().then(function(){
-    postBlog.create({
-      title:req.body.title,
-      msg:req.body.message,
-      createDate:new Date()
-    }); 
-  });
 
-  res.redirect('/posts');
-});
 
 app.listen(port, function(){
-var getTimeStamp = new Date();
-console.log('Server Started');
+console.log('server started on port '+ port);
 });

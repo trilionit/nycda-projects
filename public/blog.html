@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Post A New Article | Top Blog</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Open+Sans" rel="stylesheet">  
+	<link rel="stylesheet" type="text/css" href="styles/layout.css">
+	<script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
+
+</head>
+<body>
+<header>
+	<div class="container" align="center">
+	<div class="logo"><img src="images/logo.png" width="110" alt="logo" /></div>
+	<nav>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="/blog">Blog</a></li>
+			<li><a href="/articles">Articles</a></li>
+			<li><a href="/about">About this Blog</a></li>
+			<li><a href="/contact">Contact</a></li>
+		</ul>
+
+	</nav>
+
+	</div>
+
+</header>
+
+<div class="main-body">
+	<div class="main-left">
+	<!-- space for main articles -->
+		<div class="read-container">
+			<div class="blog-post">
+			<form action="/blog" method="Post" enctype="multipart/form-data">
+				<input type="text" name="title" required placeholder="Blog title Goes Here..." />
+				<textarea name="article" rows="7" cols="45" required style="width: 50%" class="ckeditor" ></textarea>
+				<input type="file" name="filename"><br>
+				<input type="submit" name="" value="Post">
+			</form>
+
+			</div>
+		</div>
+
+	</div>
+
+	<div class="main-right">
+		<div class="search-container">
+			<div class="search-box">
+			<input type="text" name="" placeholder="search..." />
+			<input type="submit" name="" value="search">
+			</div>
+		</div>
+
+		<div class="featured">
+			<h3>My Recent Posts ...</h3>
+		</div>
+		<div class="featured-place-holder">
+			<img src="images/place-holder-2.jpg" width="100%" alt="placeholder">
+			<div class="featured-text"><h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3></div>
+		</div>
+
+		<div class="featured-place-holder">
+			<img src="images/pl.jpg" width="100%" alt="placeholder">
+			<div class="featured-text"><h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3></div>
+		</div>
+
+
+	</div>
+</div>
+		<script type="text/javascript" src="blogPost.js"></script>
+</body>
+</html>

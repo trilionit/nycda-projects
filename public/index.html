@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Top Blog | Post Your Story Daily</title>
+	 <meta charset="UTF-8"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Open+Sans" rel="stylesheet">  
+	<link rel="stylesheet" type="text/css" href="styles/layout.css">
+	
+</head>
+<body>
+<header>
+	<div class="container" align="center">
+	<div class="logo"><img src="images/logo.png" width="110" alt="logo" /></div>
+	<nav>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li><a href="#blog">Blog</a></li>
+			<li><a href="/articles">Articles</a></li>
+			<li><a href="/about">About this Blog</a></li>
+			<li><a href="/contact">Contact</a></li>
+		</ul>
+
+	</nav>
+
+	</div>
+
+</header>
+
+<div class="main-body">
+	<div class="main-left">
+	<!-- space for main articles -->
+		<div class="read-container">
+			<div class="read-left">
+				<div class="read-date-placeholder">
+					<h3>Jan</h3>
+					<span>17</span>
+					<h4>2017</h4>
+					<div class="small-screens">Jan 17 2017</div>
+				</div>
+				<div class="read-comment-placeholder">
+					<h3>23</h3>
+					<span>Comments</span>
+					<div class="small-screens">23 Comments</div>
+				</div>
+
+			</div>
+
+			<div class="read-right" id="read-text">
+			<img src="images/place-holder.jpg" width="100%" alt="place-holder">
+			<!-- <h3>One Coconut a day helps promote heart health, and lower the risk of heart disease.</h3> -->
+
+			<h3 id="main-title"></h3>
+			<span id="main-story"></span>
+			</div>
+		</div>
+
+			
+		<div class="read-container" id="blog">
+		<form action="/"  method="post" id="post-blog">
+			<div class="blog-post">	
+			<span id="response-title" class="response"></span>	
+				<input type="text" name="title" class="input" placeholder="Blog title Goes Here..." />
+			<span id="response-story" class="response"></span>
+				<textarea name="story" id="story" class="textarea" placeholder="Enter Your Story Here"></textarea>
+				<input type="submit" name="submit" value="Post">
+			</div>
+		</form>
+		</div>
+
+	</div>
+
+	<div class="main-right">
+		<div class="search-container">
+			<div class="search-box">
+			<input type="text" name="" placeholder="search..." />
+			<input type="submit" name="" value="search">
+			</div>
+		</div>
+
+		<div class="featured">
+			<h3>Popular Posts ...</h3>
+		</div>
+		<div class="featured-place-holder">
+			<img src="images/place-holder-2.jpg" width="100%" alt="placeholder">
+			<div class="featured-text"><h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3></div>
+		</div>
+
+		<div class="featured-place-holder">
+			<img src="images/pl.jpg" width="100%" alt="placeholder">
+			<div class="featured-text"><h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</h3></div>
+		</div>
+
+
+	</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			  crossorigin="anonymous"></script>
+<script src="index.js"></script>
+<script src="js/postBlog.js"></script>
+
+</body>
+</html>
